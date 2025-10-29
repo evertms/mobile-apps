@@ -1,5 +1,8 @@
 package com.example.mobile_apps
 
+import android.os.Build
+import android.view.WindowInsets
+import android.view.WindowManager
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -22,18 +25,25 @@ import com.example.mobile_apps.ui.theme.MobileappsTheme
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            window.insetsController?.hide(WindowInsets.Type.statusBars())
+        } else {
+            @Suppress("DEPRECATION")
+            window.setFlags(
+                WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN
+            )
+        }
         setContent {
             MobileappsTheme {
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    // EjemploColumn()
-                    // EjemploRow()
-                    // EjemploBox()
+                    //Ejemplo()
                 }
             }
         }
     }
 }
-
