@@ -41,9 +41,28 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    //Ejemplo()
+                    Ejemplo()
                 }
             }
         }
+    }
+}
+
+@Composable
+fun Ejemplo() {
+    Row (
+        modifier = Modifier.background(Color.Yellow)
+    ) {
+        Text(text="Texto 1")
+        Text(text="Texto 2")
+        Text(text="Texto 3")
+    }
+}
+
+@Preview
+@Composable
+fun PreviewEjemplo() {
+    MobileappsTheme {
+        Ejemplo()
     }
 }
