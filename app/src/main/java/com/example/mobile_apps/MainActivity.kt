@@ -53,14 +53,15 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    ContactProfileScreen()
+                    //ContactProfileScreen()
+                    ProfileHeader()
                 }
             }
         }
     }
 }
 
-// Usamos @OptIn para la TopAppBar, que es experimental
+/*// Usamos @OptIn para la TopAppBar, que es experimental
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ContactProfileScreen() {
@@ -149,9 +150,9 @@ fun ContactProfileScreen() {
             }
         }
     }
-}
+}*/
 
-/*@Composable
+@Composable
 fun ProfileHeader() {
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
@@ -185,12 +186,13 @@ fun ProfileHeader() {
         )
     }
 }
-*/
+
 
 @Preview(showBackground = true)
 @Composable
 fun ContactProfilePreview() {
     MobileappsTheme {
-        ContactProfileScreen()
+        //ContactProfileScreen()
+        ProfileHeader()
     }
 }
