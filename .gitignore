@@ -1,4 +1,5 @@
 # Archivos de compilación y directorios
+.kotlin/
 /build/
 /app/build/
 .gradle/
